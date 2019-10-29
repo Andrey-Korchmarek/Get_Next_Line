@@ -28,10 +28,7 @@ static int	gnl_ifstacknotempty(char **stack, char **line)
 	{
 		*line = ft_strjoinfree(*line, *stack, 1, 0);
 		if (*stack)
-		{
-			free(*stack);
-			*stack = NULL;
-		}
+		ft_strdel(stack);
 		return (0);
 	}
 }
@@ -43,7 +40,7 @@ int			get_next_line(const int fd, char **line)
 	int			ret;
 	char		*heap;
 
-	if (!line || fd < 0 || (read(fd, stack[fd], 0) < 0) || BUFF_SIZE < 1)
+	if (!line || fd < 0 || (read(fd, stack[0], 0) < 0) || BUFF_SIZE < 1)
 		return (-1);
 	*line = ft_strnew(0);
 	if (stack[fd])
