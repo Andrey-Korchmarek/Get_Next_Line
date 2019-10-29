@@ -35,7 +35,7 @@ static int	gnl_ifstacknotempty(char **stack, char **line)
 
 int			get_next_line(const int fd, char **line)
 {
-	static char	*stack[MAX_FD];
+	static char	*stack[OPEN_MAX];
 	char		buf[BUFF_SIZE + 1];
 	int			ret;
 	char		*heap;
