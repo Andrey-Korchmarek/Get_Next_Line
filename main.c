@@ -19,26 +19,26 @@ int	main(int argc, char **argv)
 	if (argc == 2)
 	{
 		i = 0;
-		fd = open(argv[1], O_RDONLY);
+		//fd = open(argv[1], O_RDONLY);
 		fd2 = open("author", O_RDONLY);
-		a = get_next_line(fd, &line);
+		//a = get_next_line(fd, &line);
 		b = get_next_line(fd2, &line2);
-		while (a == 1 || b == 1)
+		while ( b == 1)
 		{
-			ft_putstr(line);
+			//ft_putstr(line);
 			ft_putchar('\n');
-			free(line);
+			//free(line);
 			ft_putstr(line2);
 			ft_putchar('\n');
 			free(line2);
-			a = get_next_line(fd, &line);
+			//a = get_next_line(fd, &line);
 			b = get_next_line(fd2, &line2);
 		}
-		free(line);
-		line = NULL;
+		//free(line);
+		//line = NULL;
 		free(line2);
 		line2 = NULL;
-		close(fd);
+		//close(fd);
 		close(fd2);
 	}
 	words = ft_strsplit("10 20 30 04 05 06 07 08 09 0", ' ');
